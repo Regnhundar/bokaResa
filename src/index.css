@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+:root {
+  --headline: 'Montserrat', sans-serif;
+  --breadtext: 'PT Sans', sans-serif;
+  --blackish: #000000CC;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 1000px;
+  background-color: #EEEEEE;
+  font-family: var(--breadtext);
+  margin: auto;
+}
+.wrapper {
+  width: 90%;
+  margin: 10rem auto;
+}
+
+.booking-form {
+  max-width: 500px;
+
+  box-shadow: 0px 0px 32px 0px #0000001A;
+  margin: auto;
+}
+
+.booking-form__trip {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.booking-form__headline {
+  font-family: var(--headline);
+  background: #CECECE;
+  text-align: center;
+  font-weight: 800;
+  padding: 1rem;
+}
+
+.booking-form__info-wrapper {
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  background: linear-gradient(90deg, rgba(226, 226, 226, 1) 50%, rgba(236, 236, 236, 1) 50%);
+}
+
+.booking-form__left-wrapper,
+.booking-form__right-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.booking-form__location {
+  font-family: var(--headline);
+  font-weight: 700;
+}
+
+.booking-form__time {
+  font-size: .75rem;
+  color: #00000066;
+}
+
+.booking-form__arrow {
+  max-width: 45px;
+  text-align: center;
+
+}
+
+.booking-form__selection-wrapper {
+  padding: 1.5rem;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.booking-form__class-selection {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+  font-size: .75rem;
+}
+
+.booking-form__radio-select {
+  appearance: none;
+  border: 1px solid var(--blackish);
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 1.2rem;
+  aspect-ratio: 1;
+  box-shadow: inset 0 0 0 15px white;
+}
+
+.booking-form__radio-select:checked {
+  box-shadow: inset 0 0 0 2px white;
+  background-color: var(--blackish);
+  scale: 1.2;
+}
+
+.booking-form__ticket-amount,
+.booking-form__title {
+  font-size: .85rem;
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  transition: all .2s ease-in-out;
+}
+
+.booking-form__option-container {
+  padding: .5rem;
+  height: 40px;
+  cursor: pointer;
+}
+
+.booking-form__name-label {
+  display: flex;
+  gap: .5rem;
+  font-size: .85rem;
+  flex-direction: column;
+  grid-area: auto/auto/auto/span 2;
+  transition: all .2s ease-in-out;
+}
+
+.booking-form__name-input {
+  min-height: 40px;
+  padding: .5rem;
+  border: 1px solid var(--blackish);
+  border-radius: 4px;
+}
+
+.booking-form__checkbox-label {
+  display: flex;
+  gap: .5rem;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  flex-wrap: nowrap;
+  min-width: 200px;
+}
+
+.booking-form__checkbox-label:hover,
+.booking-form__name-label:hover,
+.booking-form__ticket-amount:hover,
+.booking-form__title:hover {
+  font-weight: bold;
+}
+
+.booking-form__terms-checkbox {
+  transition: all 0.2s linear;
+  cursor: pointer;
+  width: 1.2rem;
+  border-radius: 4px;
+  aspect-ratio: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.booking-form__terms-checkbox:checked {
+  accent-color: var(--blackish);
+  scale: 1.2;
+  rotate:360deg;
+}
+
+.booking-form__submit-button {
+  all: unset;
+  text-align: center;
+  grid-area: auto/auto/auto/span 2;
+  background-color: #000000;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: active .2s linear;
+}
+
+.booking-form__submit-button:active {
+  scale: .98;
+}
+
+.booking-form__submit-button:hover {
+  background-color: #333131;
+}
+
+@media screen and (max-width: 450px) {
+  .booking-form__trip {
+    display: flex;
+    flex-direction: column;
+  }
+  .booking-form__info-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+  }
+  .booking-form__left-wrapper,
+  .booking-form__right-wrapper {
+    min-width: 20ch;
+    padding: .5rem;
+  }
+
+  .booking-form__ticket-amount,
+.booking-form__title { 
+  grid-area: auto/auto/auto/span 2;
+}
+
+  .booking-form__arrow {
+    min-width: 8ch;
+  }
+} 
